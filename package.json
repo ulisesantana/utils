@@ -1,0 +1,49 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "files": [
+    "lib/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "coverage": "jest --collectCoverage",
+    "tdd": "npm t -- --watch"
+  },
+  "author": "Ulises Santana Suárez  <ulisesantana@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.10.4",
+    "jest": "^24.1.0",
+    "npm-analyze": "^1.1.0",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": "(/src/.*/.*.test)\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulisesantana/utils.git"
+  },
+  "keywords": [
+    "utils",
+    "compare",
+    "enum"
+  ],
+  "bugs": {
+    "url": "https://github.com/ulisesantana/utils/issues"
+  },
+  "homepage": "https://github.com/ulisesantana/utils#readme"
+}
