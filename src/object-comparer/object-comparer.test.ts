@@ -29,9 +29,10 @@ describe('Object Comparer',  () => {
 
     it('Should recognize nested objects', function () {
       const obj1 = { a: 10, b: { c: null, d: { f: [{ g: true }, { m: 'neh' }] } } };
+      const obj1_ = { a: 10, b: { c: null, d: { f: [{ g: true }, { m: 'neh' }] } } };
       const obj2 = { a: 10, b: { c: null, d: { f: [{ g: true }, { m: true }] } } };
       const obj3 = { a: '10', b: { c: null, d: { f: [{ g: true }, { m: 42 }] } } };
-      expect(objectsAreStrictlyEqual(obj1, obj1)).toBe(true);
+      expect(objectsAreStrictlyEqual(obj1_, obj1)).toBe(true);
       expect(objectsAreStrictlyEqual(obj2, obj1)).toBe(false);
       expect(objectsAreStrictlyEqual(obj3, obj1)).toBe(false);
     });

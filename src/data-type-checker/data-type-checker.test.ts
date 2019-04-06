@@ -1,4 +1,4 @@
-import {isString, isBoolean, isNumber} from './data-type-checker';
+import {isString, isBoolean, isNumber, isSymbol} from './data-type-checker';
 
 describe('data-type-checker', function () {
   it('Green test', () => {
@@ -45,6 +45,23 @@ describe('data-type-checker', function () {
     expect(isNumber(null)).toBe(false);
     expect(isNumber(undefined)).toBe(false);
     expect(isNumber(()=>42)).toBe(false);
+  });
+
+  it('Should recognize a symbol', () => {
+    expect(isSymbol(Symbol())).toBe(true);
+    expect(isSymbol(Symbol('description'))).toBe(true);
+    expect(isSymbol(Math.PI)).toBe(true);
+    expect(isSymbol(-Math.PI)).toBe(true);
+    expect(isSymbol(42)).toBe(true);
+    expect(isSymbol(Infinity)).toBe(true);
+    expect(isSymbol(-Infinity)).toBe(true);
+    expect(isSymbol('')).toBe(false);
+    expect(isSymbol(false)).toBe(false);
+    expect(isSymbol([])).toBe(false);
+    expect(isSymbol({})).toBe(false);
+    expect(isSymbol(null)).toBe(false);
+    expect(isSymbol(undefined)).toBe(false);
+    expect(isSymbol(()=>42)).toBe(false);
   });
 
 });
